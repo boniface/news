@@ -21,22 +21,49 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">news</h3>
-      </div>
 
-      <div ng-view=""></div>
+    <div class="navbar navbar-inverse " role="navigation">
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+        <ng-include src="'views/header/header.html'"/>
+
     </div>
+
+    <div id="toWrap">
+
+        <ng-include src="'views/header/banner.html'"/>
+
+    </div>
+
+
+    <!-- /SearchWrap -->
+
+
+    <div id="productWrap" class="altWrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ng-view></ng-view>
+                </div>
+                <div class="col-md-4">
+                    <!--Side Bar -->
+                    <ng-include src="'views/sidebar/sidebar.html'"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /productWrap -->
+
+    <div id="featureWrap">
+
+        <ng-include src="'views/footer/stats.html'"/>
+
+    </div>
+
+
+    <footer>
+        <ng-include src="'views/footer/footer.html'"/>
+    </footer>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
