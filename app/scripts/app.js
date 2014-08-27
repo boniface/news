@@ -25,7 +25,26 @@ angular
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+            access: {
+                isFree: false
+            }
+      })
+      .when('/hash/zones', {
+        templateUrl: 'views/hashzones.html',
+        controller: 'HashzonesCtrl'
+      })
+      .when('/hash/feeds', {
+        templateUrl: 'views/hashfeeds.html',
+        controller: 'HashfeedsCtrl'
+      })
+      .when('/hash/banners', {
+        templateUrl: 'views/hashbanners.html',
+        controller: 'HashbannersCtrl'
+      })
+      .when('/hash/users', {
+        templateUrl: 'views/hashusers.html',
+        controller: 'HashusersCtrl'
       })
       .otherwise({
         redirectTo: '/'
