@@ -13,15 +13,22 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 </head>
 <body ng-app="newsApp">
+
+
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
+
+
 
 <div class="navbar navbar-inverse " role="navigation">
     <ng-include src="'views/header/header.html'"/>
@@ -31,9 +38,7 @@
     <ng-include src="'views/header/banner.html'"/>
 </div>
 
-
 <!-- /SearchWrap -->
-
 
 <div id="productWrap" class="altWrap">
     <div class="container">
@@ -43,7 +48,7 @@
             </div>
             <div class="col-md-4">
                 <!--Side Bar -->
-                <ng-include src="'views/sidebar/hashsidebar.html'"/>
+                <ng-include src="'views/sidebar/sidebar.html'"/>
             </div>
         </div>
     </div>
@@ -106,10 +111,7 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
-<script src="scripts/controllers/hashzones.js"></script>
-<script src="scripts/controllers/hashfeeds.js"></script>
-<script src="scripts/controllers/hashbanners.js"></script>
-<script src="scripts/controllers/hashusers.js"></script>
+
 <!-- endbuild -->
 </body>
 </html>

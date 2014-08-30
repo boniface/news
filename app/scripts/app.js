@@ -17,34 +17,20 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
+    .constant('baseURL', 'http://localhost:8080/api/')
+  .config(function ($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(false);
+        $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/site/main.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'views/site/about.html',
         controller: 'AboutCtrl',
             access: {
                 isFree: false
             }
-      })
-      .when('/hash/zones', {
-        templateUrl: 'views/hashzones.html',
-        controller: 'HashzonesCtrl'
-      })
-      .when('/hash/feeds', {
-        templateUrl: 'views/hashfeeds.html',
-        controller: 'HashfeedsCtrl'
-      })
-      .when('/hash/banners', {
-        templateUrl: 'views/hashbanners.html',
-        controller: 'HashbannersCtrl'
-      })
-      .when('/hash/users', {
-        templateUrl: 'views/hashusers.html',
-        controller: 'HashusersCtrl'
       })
       .otherwise({
         redirectTo: '/'
