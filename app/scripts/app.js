@@ -32,6 +32,10 @@ angular
                 isFree: false
             }
       })
+      .when('/:id', {
+        templateUrl: 'views/article.html',
+        controller: 'ArticleCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
