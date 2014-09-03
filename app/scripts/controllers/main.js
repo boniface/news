@@ -8,19 +8,48 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-  .controller('MainCtrl', function ($scope,$http,baseURL,$resource) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    .controller('MainCtrl', function ($scope, $http, baseURL) {
+        $scope.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
 
-        $scope.listPosts = function(){
-            var url = baseURL+'posts/'+'ZM';
-            $http.get(url).success(function(data){
+
+
+        $scope.setPage = function (pageNo) {
+            $scope.currentPage = pageNo;
+        };
+
+
+
+
+
+
+        $scope.listPosts = function () {
+            var url = baseURL + 'posts/' + 'ZM';
+            $http.get(url).success(function (data) {
                 $scope.posts = data;
+                $scope.maxSize = 10;
+                $scope.totalPosts =  $scope.posts.length;
+                $scope.currentPage = 1;
+
+
+                $scope.paginate = function(value) {
+                    var begin, end, index;
+                    begin = ($scope.currentPage - 1) * $scope.maxSize;
+                    end = begin + $scope.maxSize;
+                    index = $scope.posts.indexOf(value);
+                    return (begin <= index && index < end);
+                };
+
+
+
             });
         };
+
         $scope.listPosts();
 
-  });
+
+
+    });
