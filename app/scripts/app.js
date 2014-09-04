@@ -33,9 +33,29 @@ angular
                     isFree: false
                 }
             })
-            .when('/:id', {
+            .when('/news/:seo/:id', {
                 templateUrl: 'views/article.html',
                 controller: 'ArticleCtrl'
+            })
+            .when('/today', {
+              templateUrl: 'views/today.html',
+              controller: 'TodayCtrl'
+            })
+            .when('/yesterday', {
+              templateUrl: 'views/yesterday.html',
+              controller: 'YesterdayCtrl'
+            })
+            .when('/month', {
+              templateUrl: 'views/month.html',
+              controller: 'MonthCtrl'
+            })
+            .when('/custom', {
+              templateUrl: 'views/custom.html',
+              controller: 'CustomCtrl'
+            })
+            .when('/week', {
+              templateUrl: 'views/week.html',
+              controller: 'WeekCtrl'
             })
             .otherwise({
                 redirectTo: '/'
