@@ -14,26 +14,14 @@ angular.module('newsApp')
             'AngularJS',
             'Karma'
         ];
-
-
-
-        $scope.setPage = function (pageNo) {
-            $scope.currentPage = pageNo;
-        };
-
-
-
-
-
-
         $scope.listPosts = function () {
             var url = baseURL + 'posts/' + 'ZM';
             $http.get(url).success(function (data) {
+
                 $scope.posts = data;
                 $scope.maxSize = 10;
                 $scope.totalPosts =  $scope.posts.length;
                 $scope.currentPage = 1;
-
 
                 $scope.paginate = function(value) {
                     var begin, end, index;
@@ -42,14 +30,9 @@ angular.module('newsApp')
                     index = $scope.posts.indexOf(value);
                     return (begin <= index && index < end);
                 };
-
-
-
             });
         };
 
         $scope.listPosts();
-
-
 
     });
