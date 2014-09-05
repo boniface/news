@@ -1,1 +1,48 @@
-<p>This is the month view.</p>
+<div ng-controller="MonthCtrl">
+
+    <!--<div>-->
+    <!--<input type="text" class="form-control" placeholder="Search Headlines" ng-model="search.title">-->
+    <!--</div>-->
+    <pagination total-items="totalPosts"
+                ng-model="currentPage"
+                max-size="maxSize"
+                class="pagination-sm center-block"
+                boundary-links="true"
+                rotate="false"
+                num-pages="numPages"></pagination>
+    <hr/>
+    <div class="row" ng-repeat="post in news  ">
+        <div class="productFeatures clearfix">
+            <div class="col-xs-1 icon">
+							<span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<b class="fa-stack-1x fa-inverse">{{post.siteCode}}</b>
+							</span>
+            </div>
+            <div class="col-xs-11">
+                <h3>{{post.title}}</h3>
+                <i class="fa fa-newspaper-o"></i> <a href="#"> {{post.domain}} </a> | <i class="fa fa-calendar"></i>
+                {{post.date | date:'medium'}}<br/>
+                <br/>
+
+                <p>{{post.article |limitTo:200}} </p>
+
+                <div class="well col-xs-12">
+                    <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
+                            class="fa fa-eye"></i> Views: <span question-views={{item.id}}/></span>
+                    </button>
+                    <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
+                            class="fa fa-comment"></i> 0 Comments
+                    </button>
+                    <a class="btn btn-success btn-green text-right pull-right col-xs-12 col-md-6"
+                       href="#/news/{{post.seo}}/{{post.linkhash}}" id="open-review-box">Read More..</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<!--End of Row-->

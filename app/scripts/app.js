@@ -19,6 +19,7 @@ angular
         'ui.bootstrap'
     ])
     .constant('baseURL', 'http://localhost:8080/api/')
+    .constant('ZONE', 'ZM')
     .config(function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(false);
         $routeProvider
@@ -49,13 +50,17 @@ angular
               templateUrl: 'views/month.html',
               controller: 'MonthCtrl'
             })
-            .when('/custom', {
+            .when('/custom/:start/to/:end', {
               templateUrl: 'views/custom.html',
               controller: 'CustomCtrl'
             })
             .when('/week', {
               templateUrl: 'views/week.html',
               controller: 'WeekCtrl'
+            })
+            .when('/customForm', {
+              templateUrl: 'views/customform.html',
+              controller: 'CustomformCtrl'
             })
             .otherwise({
                 redirectTo: '/'

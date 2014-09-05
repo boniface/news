@@ -8,14 +8,14 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-    .controller('MainCtrl', function ($scope, $http, baseURL) {
+    .controller('MainCtrl', function ($scope, $http, baseURL,ZONE) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
         $scope.listPosts = function () {
-            var url = baseURL + 'posts/' + 'ZM';
+            var url = baseURL + 'posts/' +ZONE;
             $http.get(url).success(function (data) {
 
                 $scope.posts = data;

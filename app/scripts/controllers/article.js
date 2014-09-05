@@ -8,18 +8,18 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-  .controller('ArticleCtrl', function ($scope, $http,  $location, $timeout,  baseURL, $routeParams) {
+    .controller('ArticleCtrl', function ($scope, $http, $location, $timeout, baseURL, $routeParams, ZONE) {
         var id = $routeParams.id;
-        var URL = baseURL+'post/ZM/'+id;
+        var URL = baseURL + 'post/'+ZONE+'/' + id;
 
-        $http.get(URL).success(function(data){
-            $scope.post =data;
+        $http.get(URL).success(function (data) {
+            $scope.post = data;
 
         });
 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+        $scope.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+    });
