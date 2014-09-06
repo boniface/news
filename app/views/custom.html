@@ -3,16 +3,18 @@
     <!--<div>-->
     <!--<input type="text" class="form-control" placeholder="Search Headlines" ng-model="search.title">-->
     <!--</div>-->
-    <pagination total-items="totalPosts"
-                ng-model="currentPage"
-                max-size="maxSize"
-                class="pagination-sm center-block"
-                boundary-links="true"
-                rotate="false"
-                num-pages="numPages"></pagination>
+    <div class="row">
+        <pagination total-items="totalPosts"
+                    ng-model="currentPage"
+                    max-size="maxSize"
+                    class="pagination-lg center-block"
+                    boundary-links="true"
+                    rotate="false"
+                    num-pages="numPages"></pagination>
+    </div>
     <hr/>
 
-    <div class="row" ng-repeat="post in news  ">
+    <div class="row" ng-repeat="post in news | filter:paginate ">
         <div class="productFeatures clearfix">
             <div class="col-xs-1 icon">
 							<span class="fa-stack fa-lg">
@@ -40,6 +42,15 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <pagination total-items="totalPosts"
+                    ng-model="currentPage"
+                    max-size="maxSize"
+                    class="pagination-lg center-block"
+                    boundary-links="true"
+                    rotate="false"
+                    num-pages="numPages"></pagination>
     </div>
 
 </div>
