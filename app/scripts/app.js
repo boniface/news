@@ -18,7 +18,7 @@ angular
         'ngTouch',
         'ui.bootstrap'
     ])
-    .constant('baseURL', 'http://localhost:8080/api/')
+    .constant('baseURL', '/api/')
     .constant('ZONE', 'ZM')
     .config(function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(false);
