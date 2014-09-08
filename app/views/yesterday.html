@@ -24,7 +24,7 @@
             </div>
             <div class="col-xs-11">
                 <h3>{{post.title}}</h3>
-                <i class="fa fa-newspaper-o"></i> <a href="#"> {{post.domain}} </a> | <i class="fa fa-calendar"></i>
+                <i class="fa fa-newspaper-o"></i> <a href="#!/site/{{post.domain}}">{{post.domain}} </a> | <i class="fa fa-calendar"></i>
                 {{post.date | date:'medium'}}<br/>
                 <br/>
 
@@ -38,7 +38,7 @@
                             class="fa fa-comment"></i> 0 Comments
                     </button>
                     <a class="btn btn-success btn-green text-right pull-right col-xs-12 col-md-6"
-                       href="#/news/{{post.seo}}/{{post.linkhash}}" id="open-review-box">Read More..</a>
+                       href="#!/news/{{post.seo}}/{{post.linkhash}}" id="open-review-box">Read More..</a>
                 </div>
             </div>
         </div>

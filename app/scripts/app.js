@@ -18,10 +18,11 @@ angular
         'ngTouch',
         'ui.bootstrap'
     ])
-    .constant('baseURL', '/api/')
+    .constant('baseURL', 'http://localhost:8080/api/')
     .constant('ZONE', 'ZM')
     .config(function ($routeProvider, $locationProvider) {
-        $locationProvider.html5Mode(false);
+        $locationProvider.hashPrefix('!');
+
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -61,6 +62,30 @@ angular
             .when('/customForm', {
               templateUrl: 'views/customform.html',
               controller: 'CustomformCtrl'
+            })
+            .when('/sitetoday/:domain', {
+              templateUrl: 'views/sitetoday.html',
+              controller: 'SitetodayCtrl'
+            })
+            .when('/siteweek/:domain', {
+              templateUrl: 'views/siteweek.html',
+              controller: 'SiteweekCtrl'
+            })
+            .when('/sitemonth/:domain', {
+              templateUrl: 'views/sitemonth.html',
+              controller: 'SitemonthCtrl'
+            })
+            .when('/siteyesterday/:domain', {
+              templateUrl: 'views/siteyesterday.html',
+              controller: 'SiteyesterdayCtrl'
+            })
+            .when('/sitecustom/:domain/:start/to/:end', {
+              templateUrl: 'views/sitecustom.html',
+              controller: 'SitecustomCtrl'
+            })
+            .when('/site/:domain', {
+              templateUrl: 'views/site.html',
+              controller: 'SiteCtrl'
             })
             .otherwise({
                 redirectTo: '/'
