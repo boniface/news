@@ -8,7 +8,7 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-    .controller('MainCtrl', function ($scope, $http, baseURL,ZONE) {
+    .controller('MainCtrl', function ($scope, $http, baseURL,ZONE, Seo) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -17,6 +17,9 @@ angular.module('newsApp')
         $scope.listPosts = function () {
             var url = baseURL + 'posts/' +ZONE;
             $http.get(url).success(function (data) {
+                Seo.setTitle('This is a Ne Title');
+                Seo.setMetaDescription('This is a Ne Title');
+                Seo.appendMetaKeywords('Zambia, News, Latest, Daily');
 
                 $scope.posts = data;
                 $scope.maxSize = 5;
@@ -32,7 +35,6 @@ angular.module('newsApp')
                 };
             });
         };
-
         $scope.listPosts();
 
     });

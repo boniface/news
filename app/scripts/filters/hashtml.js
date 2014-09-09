@@ -9,8 +9,9 @@
  * Filter in the newsApp.
  */
 angular.module('newsApp')
-  .filter('hashtml',  function () {
-        return function(text) {
-            return text.replace(/\n/g, '<br/>');
+    .filter('hashtml', function () {
+        return function (text) {
+//            return text.replace(/\nt/g, '<br/>');
+            return text.replace(/^\s*|\s(?=\s)|\s*$/g, '');
         };
     });
