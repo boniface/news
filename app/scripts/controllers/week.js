@@ -14,7 +14,7 @@ angular.module('newsApp')
         $http.get(URL).success(function (data) {
             $scope.period='This Week\'s  News';
             $scope.news = data;
-            $scope.maxSize = 5;
+            $scope.maxSize = 15;
             $scope.totalPosts =  $scope.news.length;
             $scope.currentPage = 1;
 

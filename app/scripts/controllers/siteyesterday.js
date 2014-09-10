@@ -11,7 +11,7 @@ angular.module('newsApp')
   .controller('SiteyesterdayCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE) {
 
         var domain=$routeParams.domain;
-        var URL = baseURL + 'posts/site/'+ZONE+'/'+domain+'/YESTERDAY';
+        var URL = baseURL + 'posts/yesterday/'+ZONE+'/'+domain+'/YESTERDAY';
 
         $http.get(URL).success(function (data) {
             $scope.period='This Yesterday\'s  News';

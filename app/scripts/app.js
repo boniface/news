@@ -35,7 +35,7 @@ angular
                     isFree: false
                 }
             })
-            .when('/news/:seo/:id', {
+            .when('/:seo/:id', {
                 templateUrl: 'views/article.html',
                 controller: 'ArticleCtrl'
             })

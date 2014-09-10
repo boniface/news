@@ -10,7 +10,7 @@
 angular.module('newsApp')
   .controller('YesterdayCtrl',function ($scope, $http, $location, $timeout, baseURL,ZONE) {
 
-        var URL = baseURL + 'posts/date/'+ZONE+'/YESTERDAY';
+        var URL = baseURL + 'posts/yesterday/'+ZONE+'/YESTERDAY';
 
         $http.get(URL).success(function (data) {
             $scope.period='Yesterday\'s  News';

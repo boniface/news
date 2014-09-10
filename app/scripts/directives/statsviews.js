@@ -12,7 +12,7 @@ angular.module('newsApp')
 
             link: function (scope, element, attrs) {
 
-                $http.get(baseURL+ 'stats/POST/' + attrs.statsViews).success(function(number){
+                $http.get(baseURL+ 'stats/POST/' + attrs.statsViews+'/').success(function(number){
                     if(number < 9000) {
                         element.text(number);
                     }else {
