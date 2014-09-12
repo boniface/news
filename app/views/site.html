@@ -7,11 +7,12 @@
     <div class="btn-group btn-group-justified btn-group-xs, btn-group-sm btn-group-md btn-group-lg">
         <a href="#!/" class="btn btn-primary"><span class="fa-home fa-lg"></span></a>
 
-        <a href="#!/site/{{domain}}" class="btn btn-info">All  {{siteCode}}</a>
-        <a href="#!/sitetoday/{{domain}}" class="btn btn-info">Today </a>
-        <a href="#!/sitemonth/{{domain}}" class="btn btn-info">This Week </a>
-        <a href="#!/siteyesterday/{{domain}}" class="btn btn-info">This Month</a>
-        <a href="#!/sitecustom/{{domain}}" class="btn btn-info">Custom Select</a>
+        <a href="#!/site/url/{{domain}}" class="btn btn-info">All  {{siteCode}}</a>
+        <a href="#!/sitetoday/uri/{{domain}}" class="btn btn-info">Today </a>
+        <a href="#!/siteyesterday/uri/{{domain}}" class="btn btn-info">Yesterday</a>
+        <a href="#!/siteweek/uri/{{domain}}" class="btn btn-info">This Week </a>
+        <a href="#!/sitemonth/uri/{{domain}}" class="btn btn-info">This Month</a>
+        <a href="#!/customForm" class="btn btn-info">Custom Range</a>
     </div>
     <hr/>
     <div class="row">
@@ -37,7 +38,7 @@
             </div>
             <div class="col-xs-11">
                 <h3>{{post.title}}</h3>
-                <i class="fa fa-newspaper-o"></i> <a href="#!/site/{{post.domain}}"> {{post.domain}} </a> | <i class="fa fa-calendar"></i>
+                <i class="fa fa-newspaper-o"></i> <a href="#!/site/url/{{post.domain}}"> {{post.domain}} </a> | <i class="fa fa-calendar"></i>
                 {{post.date | date:'medium'}}<br/>
                 <br/>
 

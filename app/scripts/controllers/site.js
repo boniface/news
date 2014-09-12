@@ -8,12 +8,17 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-  .controller('SiteCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE) {
+  .controller('SiteCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE,Seo) {
+
+        console.log("This Controller is HIT")
 
         var domain=$routeParams.domain;
         var URL = baseURL + 'posts/site/'+ZONE+'/'+domain;
 
         $http.get(URL).success(function (data) {
+            Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
+            Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');
+            Seo.appendMetaKeywords('Zambia, News, Latest, Headline');
             $scope.period='This Site\'s  News';
             $scope.domain=domain;
             $scope.news = data;

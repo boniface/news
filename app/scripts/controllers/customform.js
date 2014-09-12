@@ -8,9 +8,12 @@
  * Controller of the newsApp
  */
 angular.module('newsApp')
-  .controller('CustomformCtrl',  function ($scope, $http, $location) {
+  .controller('CustomformCtrl',  function ($scope, $http, $location,Seo) {
 
         $scope.getNews = function(custom) {
+            Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
+            Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');
+            Seo.appendMetaKeywords('Zambia, News, Latest, Headline');
             var start = custom.start;
             var end = custom.end;
             $location.path('/custom/'+start+'/to/'+end);

@@ -17,9 +17,9 @@ angular.module('newsApp')
         $scope.listPosts = function () {
             var url = baseURL + 'posts/' +ZONE;
             $http.get(url).success(function (data) {
-                Seo.setTitle('This is a Ne Title');
-                Seo.setMetaDescription('This is a Ne Title');
-                Seo.appendMetaKeywords('Zambia, News, Latest, Daily');
+                Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
+                Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');
+                Seo.appendMetaKeywords('Zambia, News, Latest, Headline');
 
                 $scope.posts = data;
                 $scope.maxSize = 5;

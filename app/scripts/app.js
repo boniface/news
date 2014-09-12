@@ -63,27 +63,27 @@ angular
               templateUrl: 'views/customform.html',
               controller: 'CustomformCtrl'
             })
-            .when('/sitetoday/:domain', {
+            .when('/sitetoday/uri/:domain', {
               templateUrl: 'views/sitetoday.html',
               controller: 'SitetodayCtrl'
             })
-            .when('/siteweek/:domain', {
+            .when('/siteweek/uri/:domain', {
               templateUrl: 'views/siteweek.html',
               controller: 'SiteweekCtrl'
             })
-            .when('/sitemonth/:domain', {
+            .when('/sitemonth/uri/:domain', {
               templateUrl: 'views/sitemonth.html',
               controller: 'SitemonthCtrl'
             })
-            .when('/siteyesterday/:domain', {
+            .when('/siteyesterday/uri/:domain', {
               templateUrl: 'views/siteyesterday.html',
               controller: 'SiteyesterdayCtrl'
             })
-            .when('/sitecustom/:domain/:start/to/:end', {
+            .when('/sitecustom/uri/:domain/:start/to/:end', {
               templateUrl: 'views/sitecustom.html',
               controller: 'SitecustomCtrl'
             })
-            .when('/site/:domain', {
+            .when('/site/url/:domain', {
               templateUrl: 'views/site.html',
               controller: 'SiteCtrl'
             })
