@@ -9,9 +9,6 @@
  */
 angular.module('newsApp')
   .controller('SiteCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE,Seo) {
-
-        console.log("This Controller is HIT")
-
         var domain=$routeParams.domain;
         var URL = baseURL + 'posts/site/'+ZONE+'/'+domain;
 
