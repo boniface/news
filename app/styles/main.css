@@ -60,7 +60,7 @@ h3.sectionTitle {
     /**
     background: url(../assets/img/80.png);
     **/
-    background: #000;
+    background: #fff;
     border: 0 none;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
@@ -125,8 +125,8 @@ h3.sectionTitle {
 
 .mainHeader {
     padding: 34px 0px;
-    background: none repeat scroll 0% 0% #000000;
-    color: #000;
+    background: none repeat scroll 0% 0% #67B0D1;
+    color: #fff;
     margin-bottom: 30px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
 }
