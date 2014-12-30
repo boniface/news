@@ -10,7 +10,7 @@
 angular.module('newsApp')
     .controller('ArticleCtrl', function ($scope, $http, $location, $timeout, baseURL, $routeParams, ZONE,Seo) {
         var id = $routeParams.id;
-        var URL = baseURL + 'post/'+ZONE+'/' + id;
+        var URL = baseURL + 'post/'+ id;
 
         $http.get(URL).success(function (data) {
             Seo.setTitle(data.title);

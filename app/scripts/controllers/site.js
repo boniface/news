@@ -10,10 +10,10 @@
 angular.module('newsApp')
   .controller('SiteCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE,Seo) {
         var domain=$routeParams.domain;
-        var URL = baseURL + 'posts/site/'+ZONE+'/'+domain;
+        var URL = baseURL + 'site/'+domain;
         $http.get(URL).success(function (data) {
-            Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
-            Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');
+            Seo.setTitle('Zambia Hash | Lastest News Headlines From All Zambian Websites');
+            Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites');
             Seo.appendMetaKeywords('Zambia, News, Latest, Headline');
             $scope.period='This Site\'s  News';
             $scope.domain=domain;

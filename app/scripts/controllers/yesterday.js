@@ -10,7 +10,7 @@
 angular.module('newsApp')
   .controller('YesterdayCtrl',function ($scope, $http, $location, $timeout, baseURL,ZONE,Seo) {
 
-        var URL = baseURL + 'posts/yesterday/'+ZONE+'/YESTERDAY';
+        var URL = baseURL + 'posts/yesterday/'+ZONE;
 
         $http.get(URL).success(function (data) {
             Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');

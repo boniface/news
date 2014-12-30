@@ -11,7 +11,7 @@ angular.module('newsApp')
   .controller('SitemonthCtrl',function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE,Seo) {
 
         var domain=$routeParams.domain;
-        var URL = baseURL + 'posts/site/'+ZONE+'/'+domain+'/MONTH';
+        var URL = baseURL + 'site/'+domain+'/MONTH';
 
         $http.get(URL).success(function (data) {
             Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');

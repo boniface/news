@@ -11,9 +11,8 @@ angular.module('newsApp')
   .controller('SiteyesterdayCtrl', function ($scope, $http, $location, $timeout, baseURL,$routeParams,ZONE,Seo) {
 
         var domain=$routeParams.domain;
-        var URL = baseURL + 'posts/yesterday/'+ZONE+'/'+domain+'/YESTERDAY';
-
-        $http.get(URL).success(function (data) {
+        var URL = baseURL + 'sites/yesterday/'+domain;
+            $http.get(URL).success(function (data) {
             Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
             Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');
             Seo.appendMetaKeywords('Zambia, News, Latest, Headline');
