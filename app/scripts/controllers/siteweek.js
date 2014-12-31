@@ -12,7 +12,6 @@ angular.module('newsApp')
 
         var domain=$routeParams.domain;
         var URL = baseURL + 'site/'+domain+'/WEEK';
-
         $http.get(URL).success(function (data) {
             Seo.setTitle('Zambia Hash Lastest News Headlines From All Zambian Websites');
             Seo.setMetaDescription('Zambia Hash One Place For Latest News Headlines from All The Newspaper websites from Zambia');

@@ -1,71 +1,91 @@
 <div ng-controller="SiteyesterdayCtrl">
 
-    <!--<div>-->
-    <!--<input type="text" class="form-control" placeholder="Search Headlines" ng-model="search.title">-->
-    <!--</div>-->
+  <!--<div>-->
+  <!--<input type="text" class="form-control" placeholder="Search Headlines" ng-model="search.title">-->
+  <!--</div>-->
 
-    <div class="btn-group btn-group-justified btn-group-xs, btn-group-sm btn-group-md btn-group-lg">
-        <a href="#!/" class="btn btn-primary"><span class="fa-home fa-lg"></span></a>
+  <div class="btn-group btn-group-justified btn-group-xs, btn-group-sm btn-group-md btn-group-lg hidden-sm hidden-xs">
+    <a href="#!/" class="btn btn-primary"><span class="fa-home fa-lg"></span></a>
+    <a href="#!/site/url/{{domain}}" class="btn btn-info">All {{siteCode}}</a>
+    <a href="#!/sitetoday/uri/{{domain}}" class="btn btn-info">Today </a>
+    <a href="#!/siteyesterday/uri/{{domain}}" class="btn btn-info">Yesterday</a>
+    <a href="#!/siteweek/uri/{{domain}}" class="btn btn-info">This Week </a>
+    <a href="#!/sitemonth/uri/{{domain}}" class="btn btn-info">This Month</a>
+    <a href="#!/customForm" class="btn btn-info">Custom</a>
+  </div>
 
-        <a href="#!/site/url/{{domain}}" class="btn btn-info">All  {{siteCode}}</a>
-        <a href="#!/sitetoday/uri/{{domain}}" class="btn btn-info">Today </a>
-        <a href="#!/siteyesterday/uri/{{domain}}" class="btn btn-info">Yesterday</a>
-        <a href="#!/siteweek/uri/{{domain}}" class="btn btn-info">This Week </a>
-        <a href="#!/sitemonth/uri/{{domain}}" class="btn btn-info">This Month</a>
-        <a href="#!/customForm" class="btn btn-info">Custom Range</a>
+  <div class="container toolbar-top-container-mobi hidden-md hidden-md hidden-lg text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-info" data-toggle="dropdown">Site Period Filter</button>
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#!/site/url/{{domain}}">ALL</a></li>
+        <li><a href="#!/sitetoday/uri/{{domain}}">TODAY</a></li>
+        <li><a href="#!/siteyesterday/uri/{{domain}}">YESTERDAY</a></li>
+        <li><a href="#!/siteweek/uri/{{domain}}">THIS WEEK</a></li>
+        <li><a href="#!/sitemonth/uri/{{domain}}">THIS MONTH</a></li>
+        <li class="divider"></li>
+        <li><a href="#!/customForm">CUSTOM</a></li>
+      </ul>
     </div>
-    <hr/>
-    <div class="row">
-        <pagination total-items="totalPosts"
-                    ng-model="currentPage"
-                    max-size="maxSize"
-                    class="pagination-lg center-block"
-                    boundary-links="true"
-                    rotate="false"
-                    num-pages="numPages"></pagination>
-    </div>
-    <hr/>
+  </div>
 
 
+  <hr/>
+  <div class="row">
+    <pagination total-items="totalPosts"
+                ng-model="currentPage"
+                max-size="maxSize"
+                class="pagination-lg center-block"
+                boundary-links="true"
+                rotate="false"
+                num-pages="numPages"></pagination>
+  </div>
+  <hr/>
 
-    <div class="row" ng-repeat="post in news | filter:paginate ">
-        <div class="productFeatures clearfix">
-            <div class="col-xs-1 icon">
+
+  <div class="row" ng-repeat="post in news | filter:paginate ">
+    <div class="productFeatures clearfix">
+      <div class="col-xs-1 icon">
 							<span class="fa-stack fa-lg">
 							<i class="fa fa-circle fa-stack-2x"></i>
 							<b class="fa-stack-1x fa-inverse">{{post.siteCode}}</b>
 							</span>
-            </div>
-            <div class="col-xs-11">
-                <h3> <a href="#!/{{post.seo}}/{{post.linkhash}}">{{post.title}}</a> </h3>
-                <i class="fa fa-newspaper-o"></i> <a href="#!/site/url/{{post.domain}}"> {{post.domain}} </a> | <i class="fa fa-calendar"></i>
-                {{post.date | date:'medium'}}<br/>
-                <br/>
+      </div>
+      <div class="col-xs-11">
+        <h3><a href="#!/{{post.seo}}/{{post.linkhash}}">{{post.title}}</a></h3>
+        <i class="fa fa-newspaper-o"></i> <a href="#!/site/url/{{post.domain}}"> {{post.domain}} </a> | <i
+        class="fa fa-calendar"></i>
+        {{post.date | date:'medium'}}<br/>
+        <br/>
 
-                <p>{{post.article |limitTo:200}} </p>
+        <p>{{post.article |limitTo:200}} </p>
 
-                <div class="well col-xs-12">
-                    <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
-                            class="fa fa-eye"></i>   Views: <span stats-views={{post.linkhash}}/></span>
-                    </button>
-                    <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
-                            class="fa fa-comment"></i> 0 Comments
-                    </button>
-                    <a class="btn btn-success btn-green text-right pull-right col-xs-12 col-md-6"
-                       href="#!/{{post.seo}}/{{post.linkhash}}" id="open-review-box">Read More..</a>
-                </div>
-            </div>
+        <div class="well col-xs-12">
+          <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
+            class="fa fa-eye"></i> Views: <span stats-views={{post.linkhash}}/></span>
+          </button>
+          <button type="button" class="btn btn-default disabled col-xs-12 col-md-3"><i
+            class="fa fa-comment"></i> 0 Comments
+          </button>
+          <a class="btn btn-success btn-green text-right pull-right col-xs-12 col-md-6"
+             href="#!/{{post.seo}}/{{post.linkhash}}" id="open-review-box">Read More..</a>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <pagination total-items="totalPosts"
-                    ng-model="currentPage"
-                    max-size="maxSize"
-                    class="pagination-lg center-block"
-                    boundary-links="true"
-                    rotate="false"
-                    num-pages="numPages"></pagination>
-    </div>
+  </div>
+  <div class="row">
+    <pagination total-items="totalPosts"
+                ng-model="currentPage"
+                max-size="maxSize"
+                class="pagination-lg center-block"
+                boundary-links="true"
+                rotate="false"
+                num-pages="numPages"></pagination>
+  </div>
 
 </div>
 

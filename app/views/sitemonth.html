@@ -4,16 +4,34 @@
     <!--<input type="text" class="form-control" placeholder="Search Headlines" ng-model="search.title">-->
     <!--</div>-->
 
-    <div class="btn-group btn-group-justified btn-group-xs, btn-group-sm btn-group-md btn-group-lg">
-        <a href="#!/" class="btn btn-primary"><span class="fa-home fa-lg"></span></a>
+  <div class="btn-group btn-group-justified btn-group-xs, btn-group-sm btn-group-md btn-group-lg hidden-sm hidden-xs">
+    <a href="#!/" class="btn btn-primary"><span class="fa-home fa-lg"></span></a>
+    <a href="#!/site/url/{{domain}}" class="btn btn-info">All {{siteCode}}</a>
+    <a href="#!/sitetoday/uri/{{domain}}" class="btn btn-info">Today </a>
+    <a href="#!/siteyesterday/uri/{{domain}}" class="btn btn-info">Yesterday</a>
+    <a href="#!/siteweek/uri/{{domain}}" class="btn btn-info">This Week </a>
+    <a href="#!/sitemonth/uri/{{domain}}" class="btn btn-info">This Month</a>
+    <a href="#!/customForm" class="btn btn-info">Custom</a>
+  </div>
 
-        <a href="#!/site/url/{{domain}}" class="btn btn-info">All  {{siteCode}}</a>
-        <a href="#!/sitetoday/uri/{{domain}}" class="btn btn-info">Today </a>
-        <a href="#!/siteyesterday/uri/{{domain}}" class="btn btn-info">Yesterday</a>
-        <a href="#!/siteweek/uri/{{domain}}" class="btn btn-info">This Week </a>
-        <a href="#!/sitemonth/uri/{{domain}}" class="btn btn-info">This Month</a>
-        <a href="#!/customForm" class="btn btn-info">Custom Range</a>
+  <div class="container toolbar-top-container-mobi hidden-md hidden-md hidden-lg text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-info" data-toggle="dropdown">Site Period Filter</button>
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#!/site/url/{{domain}}">ALL</a></li>
+        <li><a href="#!/sitetoday/uri/{{domain}}">TODAY</a></li>
+        <li><a href="#!/siteyesterday/uri/{{domain}}">YESTERDAY</a></li>
+        <li><a href="#!/siteweek/uri/{{domain}}">THIS WEEK</a></li>
+        <li><a href="#!/sitemonth/uri/{{domain}}">THIS MONTH</a></li>
+        <li class="divider"></li>
+        <li><a href="#!/customForm">CUSTOM</a></li>
+      </ul>
     </div>
+  </div>
     <hr/>
     <div class="row">
         <pagination total-items="totalPosts"
@@ -25,8 +43,6 @@
                     num-pages="numPages"></pagination>
     </div>
     <hr/>
-
-
 
     <div class="row" ng-repeat="post in news | filter:paginate ">
         <div class="productFeatures clearfix">
